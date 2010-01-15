@@ -1,10 +1,6 @@
 MetaCarta Labs Rectifier
 ========================
 
-.. _`Source`: http://labs.metacarta.com/rectifier-0.1.tar.gz
-
-`Source`_. 
-
 The MetaCarta Labs Rectifier is a Django-based server and 
 OpenLayers-based client which allows you to upload maps, 
 and transform them to match the real world.
