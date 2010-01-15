@@ -1,0 +1,64 @@
+body {
+  font-size:.85em;
+}
+h1 { font-size:1.3em; }
+#refMapFrame {
+  width:48%;
+  float:right;
+  margin-top: -1em;
+}
+#refMapFrame h2 {
+  margin-bottom: .25em;
+  font-size: 1.1em;
+}
+#refMap {
+  border: 1px solid gray;
+  height:60%;
+}
+#userMapFrame {
+  width:48%;
+  margin-top: -.5em;
+}
+#userMapFrame h2 {
+  margin-bottom: .25em;
+  font-size: 1.1em;
+}
+#userMap {
+  height:60%;
+  border: 1px solid gray;
+}
+#wrapGCPTable {
+  height:19%;
+  overflow:auto;
+  width: 99%; 
+  padding: .25em;
+  background-color: #eee;
+}  
+#gcpTable {
+  border: 1px solid gray;
+  font-size: .9em;
+  border-collapse:collapse;
+  width: 98%;
+}
+#gcpTable * td {
+  border: 1px solid gray;
+  padding: .25em;
+  text-align: right;
+}
+#gcpTable * th {
+  border: 1px solid gray;
+}
+#infoArea {
+  height:20%;
+  width: 99%; 
+  overflow:auto;
+  margin-top: 1em;
+  padding: .25em;
+  float: right;
+  font-size: .8em;
+}  
+#mapinfo {float:right; width:70%; font-size:.8em;}
+#layerAdder { 
+background-Color: white; border: 1px solid black;position:absolute;top:50px;right:10px;z-index:5000;
+width:35%;padding:0px 5px;
+}

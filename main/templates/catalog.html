@@ -1,0 +1,22 @@
+{% extends "base.html"  %}
+{% block content %}
+  <table style="border: 0px; padding: 1em; margin: 1em;">
+    {% for map in maps %}
+      <tr valign="top">
+       <td class="catalogitem">
+        <a href="rectify/{{map.id}}">
+        <img src="{{map.file.url}}.thumbnail.jpg" alt="Uploaded image" style="float:left; margin:0px 10px 0px 0px; border: 0px" /></a>
+       </td>
+       <td class="catalogitem" width="60%">
+        <div style="margin:3px 3px 3px 0px; overflow:auto; width:400px">
+    <h2 style="font-size: 1.2em">{% if map.title %}{{ map.title }}{%else %}Untitled{% endif %}</h2>
+        <p>{{ map.description }}</p>
+      <a href="rectify/{{ map.id }}">{{map.file.name}}</a>: {{map.width}} x {{map.height}} <br />
+        {{ map.gcp_set.count }} <acronym title="Ground Control Point">GCP</acronym>s<br />
+      </div>
+      </td>
+      </tr>
+    {% endfor %} 
+    </table>
+
+{% endblock %} 

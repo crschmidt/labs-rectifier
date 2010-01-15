@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Commonly Asked Questions</h2>
+<dl>
+  <dt>Is this open source?</dt>
+  <dd>We're currently still working on the code behind this service.
+  We're interested in hearing what needs you have for the service, and
+  any possible needs you have for an open source package. If you want to use 
+  this code in any application, send us email at 
+  labs at metacarta dot com so   we can find out what people need from an 
+  Open Source web-based rectifier.</dd>
+  <dt>Where can I find maps to try out?</dt>
+  <dd>The <a href="http://www.lib.utexas.edu/maps/">University of Texas
+  Map Library</a> has a great collection of maps that you can try
+  out. Or just use one of the existing maps in the service: It's all
+  open! </dd>
+  <dt>How can I use these maps in my own applications?</dt>
+  <dd>
+    Each map page has a link to a URL which can be used as a WMS OnlineResource.
+    If you have a WMS client, you can use this URL in your WMS application.
+<br />
+    Alternatively, you can download the warped source data from your image.
+    This data is made available as a GeoTIFF, usable in many applications. 
+    Note that these files are very large -- in some cases 20-30 times the size
+    of the original images -- because TIFF is not a lossy format like jpeg, the
+    original format of many of these images.
+    <br />
+    If you would like us to add support for downloading the images in a 
+    different format, please email us at labs at metacarta dot com.
+    </dd>
+  <dt>What is RMS Error? What is mean RMS Error?</dt>
+  <dd>
+    RMS error is an estimate of how far off a given point is from the 
+    resulting warped image. This RMS error is currently calculated based on
+    a linear warp. Higher RMS error estimates are worse: you should aim to
+    keep these error numbers as small as possible. Usually a high error value
+    indicates that a single ground control point is incorrectly positioned:
+    deleting the highest error document will often help the entire map warp
+    better. The mean RMS error is a single value which represents the current
+    level of error on the map: if this value goes down, your map will probably 
+    warp more cleanly.
+  </dd>  
+</dl> 
+{% endblock %}

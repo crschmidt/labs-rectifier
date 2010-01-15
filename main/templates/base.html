@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xml:lang="en" >
+<head>
+<title>Map Rectifier - by MetaCarta Labs -- A web-based map rectification tool</title>
+<link rel="stylesheet" type="text/css" href="/rectifier/static/style.css" />
+</head>
+<body>
+<img src="http://labs.metacarta.com/images/MetaCarta-Labs-logo.png" style="float:right;margin-top: -5px;" />
+<div class="header">
+<h1><a href="/rectifier/">Map Rectifier</a></h1>
+<span>&nbsp;&#x2014;&nbsp;"From MetaCarta Labs"</span>
+</div>
+
+<div class="blurbdiv">
+<p> 
+  <i>Hey wait! Didn't there used to be a bunch of maps here?</i><br />
+  The rectifier database was corrupted by some unknown process. While we work
+  on getting the old database back to the way it was, we've created a copy so
+  that users can continue to use the rectifier. Sorry about that. 
+<ul>
+  <li><a href="/rectifier/">Catalog</a></li>
+  <li><a href="/rectifier/faq">FAQ</a></li>
+</ul>  
+<form method="POST" action="/rectifier/upload.cgi"  enctype="multipart/form-data" >
+  File to upload: <input type="file" name="file" /> <br />
+  Title of Map: <input type="text" name="title" /><br />
+  Description:  <br />
+  <textarea name="description" cols="30" rows="5"></textarea> 
+  <br />
+  <input type="submit" value="Upload" />
+<p>By uploading images, you are agreeing to allow anyone to view or use these 
+   maps, add <acronym title="Ground Control Point">GCP</acronym>s, remove GCPs, and so on. Although you do not grant a 
+   copyright license to other users, images are currently all public, so 
+   any image you upload will be made available and usable to other users. 
+   There is no expectation of privacy or protection of data.</p>
+   <p>If you are interested in seeing more development on this service, or if
+      you have a use for this service that you'd like to share with us, head over to
+      the <a href="http://labs.metacarta.com/blog/">MetaCarta Labs weblog</a>, or 
+      email us: labs at metacarta dot com.
+   </p>   
+</form> 
+</div>
+
+<div id="content">
+{% block content %}
+{% endblock %}
+<div class="tail">
+
+<address>
+&copy; 2006-2009 <a href="http://metacarta.com/">MetaCarta, Inc.</a>, released by <a href="http://labs.metacarta.com">MetaCarta Labs</a>
+</address>
+</div>
+
+</div>
+
+
+</body>
+</html>

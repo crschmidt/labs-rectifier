@@ -1,0 +1,84 @@
+body { 
+   font-family:Verdana;
+   margin: 10px 10px 10px 10px; 
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: Verdana, sans-serif; }
+
+h1 { display: inline; }
+h1 a { 
+   text-decoration: none; 
+}
+
+a, a:link, a:visited {
+  color:#ee3124;
+}  
+
+h2 { font-size: 1.3em; }
+
+dt { margin-top: 10px; }
+
+#menu h2 { font-size: 1.25em; }
+
+#content { 
+   float: left;
+   width: 65%; 
+   margin-right: 10px; 
+   margin-left: 1px; 
+   margin-top: 5px; 
+   padding: 5px 5px 5px 5px; 
+
+   border-top: 1px solid #000; 
+   border-right: 3px solid #000; 
+   border-left: 1px solid #000; 
+   border-bottom: 3px solid #000; 
+   font-size:.9em;
+}
+
+
+.header { 
+   margin-bottom: 8px; 
+   padding: 5px 0px 5px 20px; 
+   border-top: 1px solid #000; 
+   border-bottom: 2px ridge #000; 
+}
+
+.header span { font-style: italic; }
+
+img { border: 0em; }
+
+.posted { 
+   font-family: Verdana, sans-serif; 
+   font-size: 10px; 
+}
+
+#menu { margin: 10px 15px; margin-top: 35px; }
+
+.blurbdiv { 
+   float: right;
+   padding-top: 3em; 
+   font-family: Verdana, sans-serif; 
+   font-size: 0.8em; 
+   font-variant: small-caps; 
+   width: 30%; 
+}
+
+.tail { 
+   margin-top: 1em; 
+   padding: 0.25em; 
+}
+
+.tail div { font-size: 0.9em; }
+
+.catalogitem {
+   padding: 1em;
+}
+        #opacity {
+            padding: 0;
+            text-align: center;
+            width: 2em;
+            font-family: sans-serif;
+            background: transparent;
+            color: black;
+            border: 0;
+        }

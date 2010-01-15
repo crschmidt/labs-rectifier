@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Map Rectifier - by MetaCarta Labs</title>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjpkAC9ePGem0lIq5XcMiuhTSXBRPafK2R8TnfEKoLMm2PLYMQRQRE3R2OAkmxBmb32iN9ubl6jLyQQ"> </script>
+  <script src="http://openlayers.org/api/2.1/OpenLayers.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/style.css" />
+  <link rel="stylesheet" type="text/css" href="../static/rectifier.css" />
+  <script type="text/javascript" src="../static/rectifier.js"></script>
+</head>
+<body onload="startRectify()">
+  <div class="header">
+    <div id="mapinfo"></div>
+    <h1><a href="/rectifier/">Map Rectifier</a></h1>
+    <span>&nbsp;&#x2014;&nbsp;"From MetaCarta Labs"</span>
+  </div>
+  <div id="refMapFrame">
+    <div  style="float:right;margin-top:5px;" id="addLayer"><a href="" onclick="$('layerAdder').style.display='block';return false;">Add Layer</a></div>
+    <div id="layerAdder" style="display:none">
+    <p>Add your own layer! Enter here the full URL of your layer, including a 'layers' param and any other parameters neccesary. It will then be added to the reference map.</p>
+    <form action="" onsubmit="addRefLayer();return false;">
+      URL: <input type="text" id="layerurl" style="width:75%" /> <br />
+      Type: <select id="layertype">
+      <option value="WMS">WMS</option> 
+      <option value="KaMap">KaMap</option> 
+      </select>
+      <input type="submit" value="Add Layer" />
+    </form>  
+    <p>Examples:<ul>
+    <li>NYC Freemap: <a href="http://nyc.freemap.in/cgi-bin/mapserv?MAP=/www/freemap.in/nyc/map/basemap.map&layers=openspace,water,roads&">link</a></li>
+    <li>Boston Freemap: <a href="http://boston.freemap.in/cgi-bin/mapserv?map=/www/freemap.in/boston/docs/basemap.map&layers=border,openspace,water,roads&">link</a></li>
+    </ul></p>
+      <div style="float:right"><a href="" onclick="$('layerAdder').style.display='none';return false;">Close</a></div>
+    </div>
+    <h2>Reference Map</h2>
+    <div id="refMap"></div>
+    <div id="infoArea">
+    <div id="generalInfo">
+      <div style="width: 48%; float: right;">
+          <div id="status"></div>
+          <div id="warped"></div>
+        <form action="">
+          <select id="warpType">
+              <option value="0">Best fit</option>
+              <option value="1">Linear fit (> 3 GCPs)</option>
+              <option value="2">Quadratic fit (> 5 GCPs)</option>
+              <option value="3">* Cubic fit (> 10 GCPs)</option>
+              <option value="tps">* Thin Plate Spline</option>
+          </select>
+          <input type="button" value="Warp!" onClick="startWarp()" />
+        </form>
+       <div>&rarr; <a href="/rectifier/">image catalog</a></div>
+      </div>
+      <div style="width:48%">
+        <b>Instructions:</b> <span id="instructions">
+        Double click on the source map. A marker will be
+        added. Double click on the right side to associate that point with the
+        reference map. Double clicking on the reference map will edit the currently
+        open marker. Click on a marker on either side to start editing it. Clicking
+        the 'x' in a popup will remove that GCP. </span>
+        <form action="#" onsubmit='runGeocode();return false;'>
+          Find a Location: <input size="10" type="text" id="geocoder" />
+          <input type="submit" value="Show It" />
+        </form>  
+      </div>
+    </div>
+    </div>
+  </div> 
+  <div id="userMapFrame">
+    <h2>Source Map</h2>
+    <div id="userMap"></div>
+    <div style="float:right;padding-top:10px; font-size: .8em; font-weight: bold">RMS Error: <span id="totalError">0</span></div>
+    <h2>Ground Control Points</h2>
+    <div id="wrapGCPTable">
+      <table id="gcpTable">
+        <tr>
+          <th>#</th>
+          <th>Lon</th>
+          <th>Lat</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Error</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+

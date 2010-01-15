@@ -1,0 +1,56 @@
+MAP 
+    NAME RasterDB
+    SIZE 256 256
+    EXTENT -180 -90 180 90
+    IMAGETYPE png
+    #INTERLACE OFF
+    UNITS DD
+
+    #Make US WMS capable
+    WEB
+    IMAGEPATH "/tmp"
+       METADATA
+          "wms_title"                  "Metacarta RasterDB WMS"	
+          "wms_srs"                    "EPSG:4269 EPSG:4326"
+       END
+    END
+    
+    OUTPUTFORMAT
+        NAME GEOTIFF
+        DRIVER "GDAL/GTiff"
+        MIMETYPE "image/tiff"
+        IMAGEMODE "BYTE"
+        EXTENSION "tif"
+    END
+    OUTPUTFORMAT
+        NAME JPEG2000 
+        DRIVER "GDAL/JPEG2000"
+        MIMETYPE "image/jpeg2000"
+        IMAGEMODE "RGB"
+        EXTENSION "jp2"
+    END
+
+  outputformat
+    name "png"
+    driver "GD/PNG"
+    imagemode "rgba"
+    extension "png"
+    mimetype "image/png"
+    imagemode RGBA
+    transparent on
+  end
+
+  outputformat
+    name "png8"
+    driver "GD/PNG"
+    imagemode "rgba"
+    extension "png"
+    mimetype "image/png"
+    transparent on
+    formatoption "QUANTIZE_FORCE=ON"
+    formatoption "QUANTIZE_DITHER=ON"
+    formatoption "QUANTIZE_COLORS=250"
+  end
+
+    PROJECTION "proj=latlong" "ellps=WGS84" END
+END # Map File
