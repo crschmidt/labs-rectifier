@@ -104,7 +104,6 @@ def wms(request):
     raster.status = mapscript.MS_DEFAULT
     raster.setProjection( "+init=epsg:4326" )
     raster.dump = mapscript.MS_TRUE
-    raster.metadata.set("wcs_formats", "GEOTIFF JPEG2000")
     mapscript.msIO_installStdoutToBuffer()
     contents = map.OWSDispatch(ows)
     content_type = mapscript.msIO_stripStdoutBufferContentType()

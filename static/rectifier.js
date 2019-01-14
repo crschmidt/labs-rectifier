@@ -270,8 +270,6 @@ function toggleLocationPopup (evt, id) {
 }   
 
 function startRectify() { 
-    OpenLayers.Util.onImageLoadError = function() {  this.style.display = ""; this.src="http://labs.metacarta.com/wms-c/nodata.png"; }
- 
     var mouseDefaults = new OpenLayers.Control.MouseDefaults();
     
     mouseDefaults.defaultDblClick = function () { return true; };
@@ -281,7 +279,7 @@ function startRectify() {
                      new OpenLayers.Control.LayerSwitcher()]}
     );
     var wms2 = new OpenLayers.Layer.WMS( "OpenLayers WMS", 
-        "http://labs.metacarta.com/wms-c/Basic.py?", {layers: 'basic'} 
+        "http://vmap0.tiles.osgeo.org/wms/vmap0?", {layers: 'basic'} 
     );
     var googlesat = new OpenLayers.Layer.Google("Google Satellite", {'type':G_SATELLITE_MAP, 'maxZoomLevel':18}); 
     var jpl_wms = new OpenLayers.Layer.KaMap( "Satellite",

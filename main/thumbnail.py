@@ -1,4 +1,5 @@
-import sys, Image
+import sys
+from PIL import Image
 
 def make_thumbnail (filename):
     size = [150,150]

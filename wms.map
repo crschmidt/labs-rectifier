@@ -12,6 +12,8 @@ MAP
        METADATA
           "wms_title"                  "Metacarta RasterDB WMS"	
           "wms_srs"                    "EPSG:4269 EPSG:4326"
+          "ows_enable_request"   "*"
+          "wms_enable_request"   "*"
        END
     END
     
@@ -21,13 +23,6 @@ MAP
         MIMETYPE "image/tiff"
         IMAGEMODE "BYTE"
         EXTENSION "tif"
-    END
-    OUTPUTFORMAT
-        NAME JPEG2000 
-        DRIVER "GDAL/JPEG2000"
-        MIMETYPE "image/jpeg2000"
-        IMAGEMODE "RGB"
-        EXTENSION "jp2"
     END
 
   outputformat

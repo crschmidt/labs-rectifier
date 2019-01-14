@@ -7,13 +7,13 @@ export MAP_PATH="$BASE_PATH/uploads/maps"
 export FILENAME=$1;
 export TARGET=$2
 export ORDER=$3
-export GCPS=` 
+export GCPS="`
 echo "SELECT x,y,lon,lat 
       FROM main_gcp,main_map 
       WHERE main_gcp.map_id=main_map.id  and 
             main_map.file='maps/$1';" | \
 sqlite3 "$BASE_PATH/db/rectifier.db" | \
-sed -e 's/|/ /g' -e 's/^/-gcp /'`
+sed -e 's/|/ /g' -e 's/^/-gcp /'`"
 echo $GCPS
 export TIME=`date +'%s'`
 if [ "$ORDER" = "tps" ]; then
